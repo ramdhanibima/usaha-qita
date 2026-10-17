@@ -3,9 +3,9 @@ import './globals.css';
 import { Navbar, Footer, DisclaimerBanner } from '@/components/layout';
 
 export const metadata: Metadata = {
-  title: 'Usaha Qita — powered by BRI | Perencana Usaha & Simulasi Mandiri',
+  title: 'Usaha Qita — Prototipe Perencana Usaha & Simulasi Mandiri UMKM',
   description:
-    'Platform edukasi & simulasi perencanaan usaha mandiri untuk calon wirausaha dan UMKM Indonesia dengan matematika finansial deterministik dan pendampingan Mantri BRI.',
+    'Platform prototipe independen edukasi & simulasi perencanaan usaha mandiri untuk calon wirausaha dan UMKM Indonesia dengan matematika finansial deterministik.',
 };
 
 export const viewport: Viewport = {

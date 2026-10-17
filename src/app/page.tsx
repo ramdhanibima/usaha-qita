@@ -39,8 +39,8 @@ export default function HomePage() {
             {/* Subheadline */}
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-lg sm:leading-relaxed">
               Temukan peluang usaha sesuai modal dan minat, simulasikan Break-Even Point (BEP)
-              secara presisi, ikuti panduan roadmap langkah demi langkah, dan diskusikan rencana Anda
-              bersama Mantri BRI.
+              secara presisi, ikuti panduan roadmap langkah demi langkah, dan persiapkan rencana Anda
+              sebelum berkonsultasi bersama Mantri BRI.
             </p>
 
             {/* Tombol Aksi Utama (CTA) */}
@@ -178,10 +178,10 @@ export default function HomePage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700 mb-4">
                 <MessageSquare className="h-6 w-6" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Konsultasi Mantri BRI</h3>
+              <h3 className="text-base font-bold text-slate-900">Simulasi Diskusi Mantri BRI</h3>
               <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                Kirimkan ringkasan rencana Anda untuk sesi konsultasi tatap muka bersama Mantri BRI.
-                Transparan, aman, dan berbasis persetujuan eksplisit Anda.
+                Siapkan ringkasan rencana Anda untuk latihan bahan diskusi bimbingan usaha bersama Mantri BRI.
+                Transparan, aman, dan data tersimpan mandiri pada peramban Anda.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">

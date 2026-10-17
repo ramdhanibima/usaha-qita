@@ -339,7 +339,7 @@ export function FinancialSummaryCard({
             fullWidth
             rightIcon={<ArrowRight className="h-4 w-4" />}
           >
-            Konsultasikan Simulasi Ini ke Mantri BRI
+            Simulasikan Konsultasi Bimbingan Mantri BRI
           </Button>
         </Link>
       </CardFooter>

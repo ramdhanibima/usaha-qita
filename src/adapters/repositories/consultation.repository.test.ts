@@ -69,5 +69,27 @@ describe('MockConsultationRepository (REQ-MANTRI-01, REQ-MANTRI-03, AC-MANTRI-03
     const notFound = await repository.getByReference('UQ-MNT-999999-NONE');
     expect(notFound).toBeNull();
   });
+
+  it('menghapus riwayat dan tiket terakhir secara bersih saat clearHistory dipanggil', async () => {
+    await repository.createSimulationRequest(
+      {
+        fullName: 'Dewi Sartika',
+        phoneNumber: '081234567890',
+        preferredLocation: 'Kecamatan Coblong, Bandung',
+        businessTopic: 'financial_literacy',
+        explicitConsentGiven: true,
+        disclaimerAcknowledged: true,
+      },
+      'UQ-MNT-202610-DEWI'
+    );
+
+    expect(await repository.getLatest()).not.toBeNull();
+    expect((await repository.getAll()).length).toBe(1);
+
+    await repository.clearHistory();
+
+    expect(await repository.getLatest()).toBeNull();
+    expect((await repository.getAll()).length).toBe(0);
+  });
 });
 

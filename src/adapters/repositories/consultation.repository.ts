@@ -17,6 +17,7 @@ export interface IConsultationRepository {
   getLatest(): Promise<ConsultationRequest | null>;
   getById(id: string): Promise<ConsultationRequest | null>;
   getByReference(referenceNumber: string): Promise<ConsultationRequest | null>;
+  clearHistory(): Promise<void>;
 }
 
 /**
@@ -102,6 +103,12 @@ export class MockConsultationRepository implements IConsultationRepository {
     );
     const found = history.find((item) => item.referenceNumber === referenceNumber);
     return found ? { ...found } : null;
+  }
+
+  async clearHistory(): Promise<void> {
+    await this.simulateLatency();
+    safeStorage.removeItem(STORAGE_KEY_CONSULTATIONS);
+    safeStorage.removeItem(STORAGE_KEY_LATEST);
   }
 }
 

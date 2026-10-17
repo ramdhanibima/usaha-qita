@@ -15,6 +15,7 @@ import {
   RotateCcw,
   Clock,
   ShieldCheck,
+  Trash2,
 } from 'lucide-react';
 import { ConsultationRequest, BusinessTopic } from '@/types/consultation';
 import { Badge } from '@/components/ui/badge';
@@ -24,6 +25,7 @@ import { formatRupiah } from '@/lib/formatters';
 export interface SimulationTicketCardProps {
   ticket: ConsultationRequest;
   onReset?: () => void;
+  onDeleteTicket?: () => void;
 }
 
 const TOPIC_LABELS: Record<BusinessTopic, string> = {
@@ -43,7 +45,11 @@ const TOPIC_LABELS: Record<BusinessTopic, string> = {
  * 4. Badge visual "Data simulasi"
  * 5. Tombol navigasi "Kembali ke Dashboard"
  */
-export function SimulationTicketCard({ ticket, onReset }: SimulationTicketCardProps) {
+export function SimulationTicketCard({
+  ticket,
+  onReset,
+  onDeleteTicket,
+}: SimulationTicketCardProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyReference = async () => {
@@ -77,14 +83,15 @@ export function SimulationTicketCard({ ticket, onReset }: SimulationTicketCardPr
         <div className="space-y-1">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
             <h2 className="text-lg sm:text-xl font-bold tracking-tight">
-              Permohonan Jadwal Diskusi Diterbitkan
+              Tiket Simulasi Bimbingan Diterbitkan
             </h2>
             <Badge variant="simulation" className="border-white/30 text-white bg-white/20">
               Data simulasi
             </Badge>
           </div>
           <p className="text-sm text-emerald-50 leading-relaxed">
-            Tiket simulasi berhasil dibuat secara lokal pada perangkat Anda.
+            Tiket ini adalah konfirmasi simulasi lokal pada peramban Anda.
+            Aplikasi belum terhubung ke sistem perbankan resmi BRI dan belum ada data yang dikirim ke kantor/sistem BRI.
           </p>
         </div>
       </div>
@@ -98,7 +105,7 @@ export function SimulationTicketCard({ ticket, onReset }: SimulationTicketCardPr
               <span className="text-xs font-semibold tracking-wider uppercase text-brand-amber-400">
                 Tiket Simulasi Bimbingan Usaha
               </span>
-              <h3 className="text-lg font-bold text-white">Mantri BRI Binaan Usaha Qita</h3>
+              <h3 className="text-lg font-bold text-white">Simulasi Bimbingan Usaha Mantri BRI (Prototipe Independen)</h3>
             </div>
             <Badge variant="simulation">Data simulasi</Badge>
           </div>
@@ -257,17 +264,32 @@ export function SimulationTicketCard({ ticket, onReset }: SimulationTicketCardPr
 
           {/* Tombol Aksi Navigasi (AC-MANTRI-03.1 point 4) */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-            {onReset && (
-              <Button
-                type="button"
-                variant="outline"
-                onClick={onReset}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2"
-              >
-                <RotateCcw className="h-4 w-4" />
-                <span>Buat Pengajuan Baru</span>
-              </Button>
-            )}
+            <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
+              {onReset && (
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={onReset}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                  <span>Buat Pengajuan Baru</span>
+                </Button>
+              )}
+
+              {onDeleteTicket && (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  onClick={onDeleteTicket}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-red-600 hover:text-red-700 hover:bg-red-50 text-xs"
+                  title="Hapus data kontak dan nomor tiket ini dari penyimpanan browser"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  <span>Hapus Tiket dari Browser</span>
+                </Button>
+              )}
+            </div>
 
             <Link href="/dashboard" className="w-full sm:w-auto sm:ml-auto">
               <Button

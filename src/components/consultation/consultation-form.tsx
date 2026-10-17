@@ -303,7 +303,7 @@ export function ConsultationForm({
           onBlur={() => handleBlur('phoneNumber')}
           error={touched.phoneNumber ? errors.phoneNumber : undefined}
           required
-          helperText="Format nomor ponsel Indonesia (dimulai dengan 08, 628, atau +628)"
+          helperText="Format nomor ponsel Indonesia (dimulai dengan 08, 628, atau +628) • Hanya dicatat lokal di peramban Anda"
         />
         {isFieldValid('phoneNumber') && (
           <div
@@ -327,7 +327,7 @@ export function ConsultationForm({
           onBlur={() => handleBlur('preferredLocation')}
           error={touched.preferredLocation ? errors.preferredLocation : undefined}
           required
-          helperText="Lokasi ini digunakan untuk mencocokkan Mantri pembina wilayah terdekat"
+          helperText="Lokasi kecamatan untuk rujukan unit kerja BRI terdekat • Disimpan lokal di peramban Anda"
         />
         {isFieldValid('preferredLocation') && (
           <div

@@ -65,7 +65,7 @@ export function Navbar() {
               Usaha Qita
             </span>
             <span className="text-[11px] font-semibold text-brand-navy-600 tracking-tight leading-tight mt-0.5">
-              powered by BRI
+              Prototipe Independen UMKM
             </span>
           </div>
         </Link>

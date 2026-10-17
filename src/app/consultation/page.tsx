@@ -77,6 +77,13 @@ export default function ConsultationPage() {
     setViewMode('form');
   };
 
+  const handleDeleteTicket = async () => {
+    await consultationRepository.clearHistory();
+    setActiveTicket(null);
+    setHasExistingTicket(false);
+    setViewMode('form');
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 py-8 sm:py-12">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
@@ -91,7 +98,7 @@ export default function ConsultationPage() {
           </Link>
           <ChevronRight className="h-3 w-3" />
           <span className="font-semibold text-brand-navy-900" aria-current="page">
-            Konsultasi Mantri BRI
+            Simulasi Konsultasi Mantri BRI
           </span>
         </nav>
 
@@ -105,7 +112,7 @@ export default function ConsultationPage() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-amber-400/20 px-3 py-1 text-xs font-bold text-brand-amber-300 backdrop-blur-md border border-brand-amber-400/30">
                 <Users className="h-3.5 w-3.5" />
-                <span>Pendampingan UMKM Mandiri</span>
+                <span>Simulasi Pendampingan UMKM Mandiri</span>
               </span>
               <Badge variant="simulation" className="border-white/30 text-white bg-white/20">
                 Data simulasi
@@ -113,12 +120,12 @@ export default function ConsultationPage() {
             </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              Konsultasi Rencana Usaha bersama Mantri BRI
+              Simulasi Konsultasi Rencana Usaha bersama Mantri BRI
             </h1>
 
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-              Dapatkan bimbingan praktis mengenai literasi keuangan, pengelolaan modal kerja,
-              dan strategi rintisan usaha langsung dari tenaga pembina lapangan UMKM.
+              Simulasikan permohonan bimbingan praktis mengenai literasi keuangan, pengelolaan modal kerja,
+              dan strategi rintisan usaha sebagai bahan persiapan sebelum berkunjung ke kantor unit BRI.
             </p>
 
             {/* Banner Penegasan Kepatuhan Etis (AC-SYS-03.1) */}
@@ -180,7 +187,11 @@ export default function ConsultationPage() {
         ) : viewMode === 'ticket' && activeTicket ? (
           /* Tampilan Tiket Simulasi Berhasil (AC-MANTRI-03.1) */
           <div className="space-y-6 animate-fadeIn">
-            <SimulationTicketCard ticket={activeTicket} onReset={handleResetForm} />
+            <SimulationTicketCard
+              ticket={activeTicket}
+              onReset={handleResetForm}
+              onDeleteTicket={handleDeleteTicket}
+            />
           </div>
         ) : (
           /* Tampilan Form Pengajuan Konsultasi (AC-MANTRI-01.1, AC-MANTRI-02.1) */

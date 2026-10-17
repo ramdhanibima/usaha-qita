@@ -143,10 +143,17 @@ export function ConsultationConsentBox({
         )}
       </div>
 
-      <div className="rounded-lg bg-amber-50 p-3 border border-amber-200 text-xs text-amber-800">
-        <strong>Perlindungan Privasi:</strong> Nomor kontak WhatsApp Anda hanya dicatat
-        secara lokal pada peramban ini untuk simulasi tiket. Sistem tidak pernah membagikan
-        data pribadi Anda ke server pihak ketiga tanpa persetujuan.
+      <div className="rounded-xl bg-amber-50/80 p-3.5 border border-amber-200 text-xs text-amber-900 space-y-1">
+        <div className="font-bold text-amber-950 flex items-center gap-1.5">
+          <ShieldCheck className="h-4 w-4 text-amber-700" />
+          <span>Transparansi Penyimpanan Data Pribadi Lokal:</span>
+        </div>
+        <p className="leading-relaxed">
+          Data kontak Anda (<strong>Nama Lengkap, Nomor WhatsApp, dan Lokasi Usaha</strong>)
+          hanya disimpan secara lokal di memori peramban Anda (<em>browser localStorage</em>) untuk
+          kebutuhan mencetak tiket simulasi digital ini. Data ini <strong>tidak dikirim ke server eksternal
+          maupun sistem perbankan resmi BRI</strong>, dan Anda dapat menghapusnya sewaktu-waktu dari peramban.
+        </p>
       </div>
     </div>
   );

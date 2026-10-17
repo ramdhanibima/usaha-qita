@@ -24,12 +24,13 @@ export function Footer() {
                   <Badge variant="simulation" size="sm" />
                 </p>
                 <p>
-                  <strong>Usaha Qita</strong> adalah platform edukasi & simulasi perencanaan usaha
-                  mandiri. Usaha Qita{' '}
+                  <strong>Usaha Qita</strong> adalah platform prototipe independen untuk edukasi & simulasi
+                  perencanaan usaha mandiri. Usaha Qita{' '}
                   <span className="font-semibold underline decoration-amber-400">
-                    bukan aplikasi resmi penerbit pinjaman dari PT Bank Rakyat Indonesia (Persero) Tbk
+                    bukan aplikasi resmi penerbit pinjaman dari PT Bank Rakyat Indonesia (Persero) Tbk,
+                    tidak berafiliasi resmi, dan tidak mengirimkan data tiket simulasi ke sistem BRI
                   </span>
-                  . Pengajuan konsultasi Mantri BRI bersifat bimbingan/diskusi edukatif dan{' '}
+                  . Pengajuan konsultasi Mantri BRI bersifat simulasi edukatif dan{' '}
                   <strong>tidak menjamin persetujuan kredit</strong> (seperti KUR atau Kupedes).
                 </p>
                 <p className="text-amber-900/90 text-xs">
@@ -55,7 +56,7 @@ export function Footer() {
               <div>
                 <p className="text-base font-bold text-brand-navy-900 leading-none">Usaha Qita</p>
                 <p className="text-xs font-semibold text-brand-navy-600 leading-tight mt-0.5">
-                  powered by BRI
+                  Prototipe Independen UMKM
                 </p>
               </div>
             </div>

@@ -34,8 +34,8 @@ export function DisclaimerBanner({
         <div className="flex items-center gap-2">
           <AlertCircle className="h-4 w-4 shrink-0 text-amber-600" aria-hidden="true" />
           <p className="leading-snug">
-            <strong className="font-semibold">Transparansi Edukasi:</strong> Usaha Qita adalah platform
-            edukasi perencanaan usaha mandiri & simulasi data. Usaha Qita{' '}
+            <strong className="font-semibold">Transparansi Prototipe Demo:</strong> Usaha Qita adalah platform
+            prototipe independen edukasi perencanaan usaha mandiri & simulasi data. Usaha Qita{' '}
             <span className="font-semibold underline decoration-amber-400">
               bukan aplikasi perbankan resmi penerbit pinjaman dari PT Bank Rakyat Indonesia (Persero) Tbk
             </span>
